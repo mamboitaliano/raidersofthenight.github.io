@@ -1,10 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ian's DBC Cultural Blog</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../Stylesheets/blog-stylesheet.css">
+</head>
 
-What are the benefits of version control?
-Version control is a means to keep track of (and remember) changes made to a file, allowing one to revert to an older, working version in case the current version is lost, corrupted, or simply needs to be updated.
+<body>
+  <h1 id="main_header">What are the benefits of version control?</h1>
+  <h2 id="second_header">Version control is a truly awesome concept</h2>
+  <h4 id="date_header">3-21-2015</h4>
 
-For version control, developers use Git, which is a version control system that allows them to make changes to a project, track said changes, and create readily-available backup versions without affecting the most current stable version of the code (also known as the master branch). Git achieves this through the use of "branches", where the "master" branch contains the most recent, well tested and stable version of the code. One could think of the master branch as the trunk of the tree. 
+  <section>
+    <p class="bodytext">
+      Version control is a means to keep track of (and remember) changes made to a file, allowing one to revert to an older, working version in case the current version is lost, corrupted, or simply needs to be updated. For version control, developers use Git, which is a version control system that allows them to make changes to a project, track said changes, and create readily-available backup versions without affecting the most current stable version of the code (also known as the master branch). Git achieves this through the use of "branches", where the "master" branch contains the most recent, well tested and stable version of the code. One could think of the master branch as the trunk of the tree. 
+    </p>
+    <p class="bodytext">
+        Whenever a dev team needs to make changes (i.e. work on the latest update), they would create a new branch off the master branch. This new branch contains the same code as the master branch and allows the team to make changes and test the new code out before merging it into the master branch. Each series of changes, such as a new feature added to an application, is bundled into what is known as a "commit", which records each set of changes into a snapshot that is added into the project's history. Commits from two or more sources can be merged, creating a new file that contains the changes made by all sources working on the current branch.
+    </p>
+    <p class="bodytext">
+       Why use GitHub? GitHub is a web-based Git repository hosting service, which offers all of the distributed revision control and source code management functionality of Git as well as adding its own features. It is one of the most popular online platforms for Git version control, but another feature that makes it popular is it's "social coding" aspect that allows for collaboration between developers. As Stephanie Oh states in her blog post "Git vs. GitHub for Dummies" (http://stephaniehoh.github.io/blog/2013/10/07/git-vs-github-for-dummies/), GitHub is sort of like the Dropbox (or Google Drive) for the changes you make to files using Git, which, unlike GitHub, lives locally as software that you install on your own computer. One slight difference is that while Dropbox has an autosync feature in the form of a desktop application, Git (for obvious reasons) doesn't auto-sync but rather requires that you "push" your changes to GitHub.
+    </p>
+  </section>
+</body>
 
-Whenever a dev team needs to make changes (i.e. work on the latest update), they would create a new branch off the master branch. This new branch contains the same code as the master branch and allows the team to make changes and test the new code out before merging it into the master branch. Each series of changes, such as a new feature added to an application, is bundled into what is known as a "commit", which records each set of changes into a snapshot that is added into the project's history. Commits from two or more sources can be merged, creating a new file that contains the changes made by all sources working on the current branch.
 
-Why use GitHub? 
-GitHub is a web-based Git repository hosting service, which offers all of the distributed revision control and source code management functionality of Git as well as adding its own features. It is one of the most popular online platforms for Git version control, but another feature that makes it popular is it's "social coding" aspect that allows for collaboration between developers. As Stephanie Oh states in her blog post "Git vs. GitHub for Dummies" (http://stephaniehoh.github.io/blog/2013/10/07/git-vs-github-for-dummies/), GitHub is sort of like the Dropbox (or Google Drive) for the changes you make to files using Git, which, unlike GitHub, lives locally as software that you install on your own computer. One slight difference is that while Dropbox has an autosync feature in the form of a desktop application, Git (for obvious reasons) doesn't auto-sync but rather requires that you "push" your changes to GitHub.
