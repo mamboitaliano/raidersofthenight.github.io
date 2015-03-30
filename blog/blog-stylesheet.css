@@ -1,0 +1,23 @@
+body {
+	background-color: #233040;
+}
+
+#main_header {
+	font-family:arial;
+	font-weight:bold;
+	color:white;
+}
+
+#second_header{
+	color:#DBE6FF;
+	font-family:arial;
+}
+
+#date_header{
+	color:#DBE6FF;
+	font-family:arial;
+}
+.body_text {
+	color:#DBE6FF;
+	font-family:calibri;
+}
