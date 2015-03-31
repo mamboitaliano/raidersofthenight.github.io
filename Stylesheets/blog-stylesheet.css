@@ -17,7 +17,48 @@ body {
 	color:#DBE6FF;
 	font-family:arial;
 }
+
 .bodytext {
 	color:#DBE6FF;
 	font-family:calibri;
+	margin-right:15%;
 }
+
+.bodytext a {
+	text-decoration:underline;
+	color:white;
+}
+
+.code {
+	font-family:consolas;
+	color:white;
+}
+
+img {
+	border:0.3em solid gray;
+	position:relative;
+	left:6%
+}
+
+#sidebar {
+	color:white;
+	background-color:#DBE6FF;
+	border-left:0.3em solid gray;
+	width:12em;
+	height:100%;
+	text-align:center;
+	position:fixed;
+	top:0em;
+	right:0em;
+}
+
+.link_container {
+	border:1px solid black;
+	font-family:arial;
+	font-size:1.05em;
+	padding:0.2em;
+}
+
+/*#home {
+	margin-top:1.05em;
+}*/
