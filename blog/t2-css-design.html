@@ -18,7 +18,7 @@
       <p class="bodytext">
         First, let's go over what it means for an element's position property to be <span class="bolded">static</span>. Static positioning basically means that your HTML elements would follow a "natural order", so to speak. For example, if you were to create an orange square and a blue square without setting any <span class="code">position</span> properties, it would default to <span class="code">position: static</span>, and you would see an blue square with an orange square stacked on top of it, like this: 
       </p>
-        <div><img src="https://github.com/raidersofthenight/raidersofthenight.github.io/blob/master/blog/blog-imgs/stacked-divs-1.PNG" alt="div example 1"/></div>
+        <div><img src="https://github.com/raidersofthenight/raidersofthenight.github.io/blob/master/blog/blog-imgs/stacked-divs-1.PNG?raw=true" alt="div example 1"/></div>
         <p class="bodytext">
           Notice that I specified each element's <span class="code">position</span> property to <span class="code">static</span>? Hence the natural stacked order of things. Unlike <a href="http://www.berkshirehathaway.com">Warren Buffett</a>, we're more ambitious than that. So, let's go ahead and set each div's <span class="code">position</span> property to <span class="code">absolute</span>. 
         </p>
@@ -29,14 +29,14 @@
         <p class="bodytext">
           Now, let's try something different. Let's set the <span class="code">position</span> properties of our squares to <span class="code">relative</span> and set the orange square's position from the lef to <span class="code">left:2em</span> and see what happens. 
         </p>
-        <div><img src="/blog-imgs/stacked-divs-3.png" alt="div example 3"/></div>
+        <div><img src="https://github.com/raidersofthenight/raidersofthenight.github.io/blob/master/blog/blog-imgs/stacked-divs-3.PNG?raw=true" alt="div example 3"/></div>
         <p class="bodytext">
           See how the orange square shifted to the right by 2em? That's because relative positioning positions an element <span class="italicized">relative to its normal position</span>, i.e. where it would be if you didn't assign it any <span class="code">position</span> property. So, the combination of assigning to an element the <span class="code">position</span> of <span class="code">relative</span> and then specifying a <span class="code">2em</span> distance from the left would shift the element <span class="code">2em</span> from where it would normally be. Pretty straight-forward huh?
         </p>
         <p class="bodytext">
           Now let's move on to try something really cool. Let's say that you want to have a sidebar with links to your other blog posts positioned on the left of the page, but you don't want it to move out of the screen when a user scrolls down. Instead, you want it to stay on the screen regardless of whether or not the user scrolls down the page. In this case, you would use <span class="code">fixed</span> positioning. When an item is assigned the <span class="code">position</span> property of <span class="code">fixed</span>, it is positioned relative to the browser window and will not move even if you scroll. 
         </p>
-        <div><img src="/blog-imgs/stacked-divs-4.png" alt="div example 4"/></div>
+        <div><img src="https://github.com/raidersofthenight/raidersofthenight.github.io/blob/master/blog/blog-imgs/stacked-divs-4.PNG?raw=true" alt="div example 4"/></div>
         <p class="bodytext">
           I hope this was helpful and that you now understand the difference between the different positioning properties in CSS. Ciao!
         </p>
