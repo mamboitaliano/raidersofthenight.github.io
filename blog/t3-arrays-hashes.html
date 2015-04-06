@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ian's DBC Technical Blog</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../Stylesheets/blog-stylesheet.css">
+</head>
+
+<body>
+  <h1 id="main_header">Hashes vs. Arrays</h1>
+  <h2 id="second_header">What's the difference?</h2>
+  <h4 id="date_header">4-4-2015</h4>
+
+  <section>
+    
+    <p class="bodytext">
+      As you've come along learning Ruby, you've probably wondered what the difference is between an array and a hash? Well let's go ahead and clarify that now. Both of these are what are called "data structures", as in they are literally a structure consisting of a collection of data. These are used for various reasons in almost all programming languages and are incredibly useful. 
+    </p>
+
+    <p class="bodytext">
+      Let's start with arrays. You can think of an array as a numbered list, where each slot consists of an index number, and each index number has a corresponding value, like this:
+    </p>
+    
+    <div> 
+      <span class = "code">my_array = [1, 2, 3, 4, 5]</span>
+    </div>
+    
+    <p class="bodytext"> 
+      Arrays store data in sequential order, and the index-value relationship follows a zero-based numbering format, meaning that the index begins with 0, not 1. You can retrieve the value in any given slot by referencing the array and its index number, but keep in mind that in order to retrieve the first value in an array, you would have to reference index number 0 (not 1). For example, my_array[1] would return 2 because 2 is the value currently stored in index 1. Unlike most other programming languages, an array in Ruby can store all sorts of different types of data in any given index slot. Arrays can even store other arrays, or even hashes. However, I want to reiterate that values in an array can only be referenced by their respective index numbers. When would one use arrays? Let's say you want to build a list of some sort...say...a class roster. This would be a good time to use an array, because all you really need is a list, right?
+    </p>
+    
+    <div>
+      <span class = "code">class_roster = [Veronica, Jimmy, Mary, Frank, Todd, Francois, John, Sabrina, Claire, Jake]</span>
+    </div>
+    
+    <p class = "bodytext">
+      There's your list! If you want to retrieve Frank, all you need to do is <span class="code"> class_roster[3]</span>
+    </p>
+
+    <p class="bodytext">
+       And then we have hashes. Hashes are almost the exact same thing as an array. In fact, technically, a hash is what is known as an associative array - they contain a function called a hash function that connects a key to a corresponding value. They are both data structures that store a set of information that can be accessed by referencing something. Only with hashes, you don't reference an index number, you reference the key that corresponds to a certain value. Unlike arrays, you are the one responsible for assigning a key to its corresponding value. And you have to come up with the key. Which means you need to type it yourself. So much effort right? True, but on the bright side, that means that you get to be descriptive with your keys. For example, let's say that you need to build a data structure that contains (1) the names of a number of video games and (2) their respective types. In this case you would choose a hash, because a hash would allow you to assign the name of the video game as the key and the type of game as the key's corresponding value, like so: 
+    </p>
+    
+    <div>
+       <span class = "code">game_hash {</span>
+         <span class = "code">:Bioshock => "Role-play, FPS"</span>
+         <span class = "code">:Command & Conquer => "RTS"</span>
+         <span class = "code">:Command & Conquer 3 => "RTS"</span>
+         <span class = "code">:Destiny => "FPS"</span>
+         <span class = "code">:Call of Duty Ghosts => "FPS"</span>
+       <span class = "code">}</span>
+    </div>
+    
+    <p class="bodytext">
+      Is that it? As far as I know, yes. Arrays and hashes, with the exception of some syntax differences, can be read, accessed, manipulated, changed, grown, shrunk, massaged, eaten, kicked, thrown, driven, flown, courted, caressed, destroyed, or tickled in very similar ways. There is one difference however. In Ruby, <a href="http://stackoverflow.com/questions/5551168/performance-of-arrays-and-hashes-in-ruby">hashes are much faster for lookups that arrays</a>. 
+    </p>
+
+      <!-- copy and paste as many sections as you want to add paragraphs -->
+  </section>
+
+  <!--SIDEBAR-->
+  <div id="sidebar">
+    <div id="home" class="link_container">
+     <a href="https://raidersofthenight.github.io">Home</a>
+    </div>
+    <br>
+    <div id="git_blog" class="link_container">
+      <a href="https://raidersofthenight.github.io/blog/t1-git-blog.html">Git & Version Ctrl</a>
+    </div>
+    <br>
+    <div class="link_container">
+      <a href="https://raidersofthenight.github.io/blog/c1-chefs-kitchen.html">Chef's Kitchen</a>
+    </div>
+    <br>
+    <div class="link_container">
+      <a href="https://raidersofthenight.github.io/blog/t2-css-design.html">CSS Design</a>
+    </div>
+    <div class="link_container">
+      <a href="https://raidersofthenight.github.io/blog/t3-arrays-hashes.html">Arrays & Hashes</a>
+    </div>
+  </div>
+
+</body>
