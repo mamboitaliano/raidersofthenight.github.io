@@ -1,25 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Ian's DBC Cultural Blog</title>
+  <title>Ian's DBC Technical Blog</title>
   <meta charset="UTF-8">
   <link rel="stylesheet" type="text/css" href="../Stylesheets/blog-stylesheet.css">
 </head>
 
 <body>
-  <h1 id="main_header"><!--Delete this text--->-->Insert title here</h1>
-  <h2 id="second_header"><!--Delete this text--->-->Insert subtitle here</h2>
-  <h4 id="date_header"><!--Delete this text--->-->Insert date here</h4>
+  <h1 id="main_header">The Enumerable#map Method</h1>
+  <h2 id="second_header">What it does and how it works</h2>
+  <h4 id="date_header">4-11-2015</h4>
 
   <section>
     <p class="bodytext">
-      <!--Delete this text--->-->Write something here
+      The Enumerable module provides a set of really useful methods that allow you to traverse, manipulate, search through, and sort data collections such as arrays and hashes. In this post, we're gonna talk about the <span class = "code">Enumerable#map</span> method. The <span class = "code">map</span> method, also known as <span class = "code">collect</span>, allows you to transform each element in an array without actually modifying the original array itself. How does it do this? Simple: it just creates a transformed copy without altering the original. 
     </p>
     <p class="bodytext">
-        <!--Delete this text--->-->Write something here too
+        For example:<br>
+        <span class="code">array = [1, 2, 3, 4, 5]</span>  creates a simple array<br>
+        <span class="code">plus_one = array.map { |i| i + 1 }</span> creates a copy of <span class="code">array</span> with each value incremented by 1<br>
     </p>
     <p class="bodytext">
-       <!--Delete this text--->-->Lastly, write something here
+       In the example above, <span class="code">array</span> is not modified. We just created a copy and changed the copy to what we wanted. What really makes this cool is the fact that we can then join another method to it! For example:<br>
+       <span class="code">plus_one.delete_at(2)</span> returns <span class="code">4</span> in IRB<br>
+       Now, if we print <span class="code">plus_one</span> in IRB, we get <span class="code">=> [2, 3, 5, 6]</span><br>
+       And if we print <span class="code">array</span> in IRB, we get <span class="code">=> [1, 2, 3, 4, 5]</span><br>
+       See how that works? <span class="code">.map</span> accepts a block of code that subsequently acts on each element in the collection collection that it is invoked on but returns the modified collection while leaving the original untouched.
+    </p>
+    <p class = "bodytext">
+      Source: <a href="http://ruby.bastardsbook.com/chapters/enumerables/">The Bastards Book of Ruby - Enumerables</a>
     </p>
 
       <!-- copy and paste as many sections as you want to add paragraphs -->
