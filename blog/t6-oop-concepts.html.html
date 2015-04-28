@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ian's DBC Technical Blog</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../Stylesheets/blog-stylesheet.css">
+</head>
+
+<body>
+  <h1 id="main_header">OOP Concepts in Ruby</h1>
+  <h2 id="second_header">What are modules?</h2>
+  <h4 id="date_header">April 25th, 2015</h4>
+
+  <section>
+    <p class="bodytext">
+     By now you might have come accross things called "modules" in your quest to become a Ruby master. Maybe you saw them in an example, or in a book on object-oriented programming, or whatever. So what are modules, and why are they imporant? 
+    </p>
+    <p class="bodytext">
+        First and foremost, it's important to remember that Ruby does not allow multiple ineritance. One class can inherit from another class, but it can't inherit from two or three classes at once. Some other languages, such as C++, do allow multiple inheritance, but thankfully Ruby has a neat and powerful way to work around this. I'm going to be using an example given by Matt Stopas in his collection of <a href="https://www.youtube.com/watch?v=JkR8LrSj9u8">YouTube videos</a>. Let's say that you have a class <span class="code">loan</span> that has a method called <span class="code">owed_by_month</span>, which calculates how much you need to pay per month on your loan by dividing the balance owed by the maturity date. Now let's say you have another class, <span class="code">bond</span>, that has a method - also named owed_by_month - that returns the amount owed per month by dividing the balance owed by the maturity date. See how both classes contain methods that do the exact same thing? This violates the programming principle of "Don't Repeat Yourself" (DRY).  
+    </p>
+    <p class="bodytext">
+       So how can you NOT repeat yourself? Define a module that takes in the appropriate arguments and contains a method - <span class="code">owed_by_month</span> that calculates how much is owed per month by simply dividing the amount owed by the maturity date. Name the module Amt_owed or something. Calculating the amount owed on something is a fairly common thing to do, right? Lots of different things could use this, not just a <span class="code">loan</span> or a <span class="code">bond</span>. Now go back to your classes and replace the repetitive methods in each of your classes with <span class="code">include Amt_owed</span>. Bam! Now your method <span class="code">owed_by_month</span> can be accessed in both the <span class="code">loan</span> and <span class="code">bond</span> classes. You now have a module that contains a method that you'll need to use in a number of different classes, relieving you from having to write the same method over and over again. Modules allow you to break out of your domain logic, so you don't need to cram everything in your classes. In a way, they're like a global variable that you can use accross classes. 
+    </p>
+    <p class="bodytext">
+       Modules can also be very useful from a namespacing standpoint. If you need to create a class that you know will create a namespace conflict, you can wrap that class inside a module, name the class what you need to name it, and assign the module a name. Then, if you need to create another class in a different file, but your class also presents a namespace conflict, you can simply create another module and give it the same name as the previous one. When you do load both files at runtime, both classes get merged into the same module (because it has the same name in both files). Meaning that you can now call the classes whatever you want without having to worry about a namespace conflict because they're wrapped inside a module!
+    </p>
+
+      <!-- copy and paste as many sections as you want to add paragraphs -->
+  </section>
+  <!--SIDEBAR-->
+  <div id="sidebar">
+    <div id="home" class="link_container">
+     <a href="https://raidersofthenight.github.io">Home</a>
+    </div>
+    <div id="git_blog" class="link_container">
+      <a href="https://raidersofthenight.github.io/blog/t1-git-blog.html">Git & Version Ctrl</a>
+    </div>
+    <div class="link_container">
+      <a href="https://raidersofthenight.github.io/blog/c1-chefs-kitchen.html">Chef's Kitchen</a>
+    </div>
+    <div class="link_container">
+      <a href="https://raidersofthenight.github.io/blog/t2-css-design.html">CSS Design</a>
+    </div>
+    <div class="link_container">
+      <a href="https://raidersofthenight.github.io/blog/c3-thinking-style.html">My Thinking Style</a>
+    </div>
+    <div class="link_container">
+      <a href="https://raidersofthenight.github.io/blog/c4-tech-issues.html">Issues in Tech v. 1.0</a>
+    </div>
+     <div class="link_container">
+      <a href="https://raidersofthenight.github.io/blog/t4-enumerable-methods.html">Enumerable Methods</a>
+    </div>
+    <div class="link_container">
+      <a href="https://raidersofthenight.github.io/blog/c5-feedback.html">Pairing & Feedback</a>
+    </div>
+    <div class="link_container">
+      <a href="https://raidersofthenight.github.io/blog/t5-ruby-classes.html">Ruby Classes</a>
+    </div>
+    <div class="link_container">
+      <a href="https://raidersofthenight.github.io/blog/c6-stereotype-threat.html">Stereotype Threat</a>
+    </div>
+    <div class="link_container">
+      <a href="https://raidersofthenight.github.io/blog/t6-oop-concepts.html">OOP Concepts 1 - Modules</a>
+    </div>
+  </div>
+</body>
