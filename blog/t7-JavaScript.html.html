@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ian's DBC Technical Blog</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../Stylesheets/blog-stylesheet.css">
+</head>
+
+<body>
+  <h1 id="main_header">Ruby vs. JavaScript</h1>
+  <h2 id="second_header">How do they differ?</h2>
+  <h4 id="date_header">May 1st, 2015</h4>
+
+  <section>
+    <p class="bodytext">
+      By now we've spent four weeks learning Ruby. Now it's on to JavaScript. During this last week, we hit it hard a learned as much as one could learn about JavaScript in seven days. Now it's time to sit back and reflect on how both languages differ. First and foremost, it is imporant to not that Ruby is a class-based language whereas Javascript is considered a prototype-based language. Ruby allows us to organize classes to call instance methods on objects of that class and manipulate data. However, Object Oriented Programming can also be...well...simulated in JavaScript using functions to mimic classes.
+    </p>
+    <p class="bodytext">
+      One way to do this is by using the constructor function on a new object in Javascript, which allows that object to inherit the prototype methods associated with that function. While Ruby uses class methods, JavaScript uses static methods which can't be called on an object but can be called on the function itself. 
+    </p>
+    <p class="bodytext">
+       When it comes to declaring a class in Ruby, we use the syntax <span class="code">class Terminator</span> followed by the end of input keyword, <span class="code">end</span>. In JavaScript, however, declaring a class is done with the syntax <span class="code">function Terminator(modelNo, modelType) { };</span>
+    </p>
+    <p class="bodytext">
+       Instance methods in Ruby are defined using the syntax <span class="code">def method_name ...end</span>, while in JavaScript, the sytax is <span class="code">Classname.prototype.methodName = function() {};</span>
+    </p>
+    <p class="bodytext">
+       Class methods in Ruby are defined using the syntax <span class="code">def self.method_name ...end</span>, while in JavaScript, the sytax is <span class="code">Classname.methodName = function() {};</span>
+    </p>
+    <p class="bodytext">
+       Looping is another thing that is vastly different between Ruby and JavaScript. A typical Ruby loop will look like this: <span class="code">my_array.each { |i| do something...}</span>, where <span class="code">i</span> is a variable that holds the value of the current iteration. For example, if you have array <span class="code">my_array[1, 2, 3, 4, 5]</span>, the <span class="code">.each</span> part tells Ruby that this is a loop, and that it's going to have to iterate through <span class="code">my_array</span>, holding the value of each index in <span class="code">i</span> during each iteration. The part after the <span class="code">|i|</span> is where you put the code that tells Ruby what to do during each iteration. 
+    </p>
+    <p class="bodytext">
+       On the other hand, looping in JavaScript follows nearly the same syntax and logic as most C languages and Java. The most common JavaScript loop is the <span class="code">for</span> loop. This is what a typical <span class="code">for</span> loop in JavaScript looks like: <span class="code">for (i = 0; i < my_array.length; i++) { }</span>, where <span class="code">i = 0</span> tells JavaScript to begin at 0, <span class="code">i < my_array.length</span> tells JavaScript to iterate through <span class="code">my_array</span> as long as <span class="code">i</span> is less than the <span class="code">length</span> of <span class="code">my_array</span>, and finally to increment <span class="code">i</span> by 1 during every iteration (<span class="code">i++</span>). 
+    </p>
+  </section>
+  <!--SIDEBAR-->
+  <div id="sidebar">
+    <div id="home" class="link_container">
+     <a href="https://raidersofthenight.github.io">Home</a>
+    </div>
+    <div id="git_blog" class="link_container">
+      <a href="https://raidersofthenight.github.io/blog/t1-git-blog.html">Git & Version Ctrl</a>
+    </div>
+    <div class="link_container">
+      <a href="https://raidersofthenight.github.io/blog/c1-chefs-kitchen.html">Chef's Kitchen</a>
+    </div>
+    <div class="link_container">
+      <a href="https://raidersofthenight.github.io/blog/t2-css-design.html">CSS Design</a>
+    </div>
+    <div class="link_container">
+      <a href="https://raidersofthenight.github.io/blog/c3-thinking-style.html">My Thinking Style</a>
+    </div>
+    <div class="link_container">
+      <a href="https://raidersofthenight.github.io/blog/c4-tech-issues.html">Issues in Tech v. 1.0</a>
+    </div>
+     <div class="link_container">
+      <a href="https://raidersofthenight.github.io/blog/t4-enumerable-methods.html">Enumerable Methods</a>
+    </div>
+    <div class="link_container">
+      <a href="https://raidersofthenight.github.io/blog/c5-feedback.html">Pairing & Feedback</a>
+    </div>
+    <div class="link_container">
+      <a href="https://raidersofthenight.github.io/blog/t5-ruby-classes.html">Ruby Classes</a>
+    </div>
+    <div class="link_container">
+      <a href="https://raidersofthenight.github.io/blog/c6-stereotype-threat.html">Stereotype Threat</a>
+    </div>
+    <div class="link_container">
+      <a href="https://raidersofthenight.github.io/blog/t6-oop-concepts.html">OOP Concepts 1 - Modules</a>
+    </div>
+    <div class="link_container">
+      <a href="https://raidersofthenight.github.io/blog/c7-values.html">Affirmation & Stereotype Threat</a>
+    </div>
+    <div class="link_container">
+      <a href="https://raidersofthenight.github.io/blog/t7-JavaScript.html">Ruby vs. JavaScript</a>
+    </div>
+  </div>
+</body>
