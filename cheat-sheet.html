@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DBC Cheat Sheet</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="stylesheets/cheat-sheet.css">
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <section id="header">
+      <h1> Cheat Sheet</h1>
+      <ul>
+        <li><a href="#">JavaScript</a></li>
+        <li><a href="#">Ruby</a></li>
+        <li><a href="#">Git</a></li>
+        <li><a href="#">SQL</a></li>
+      </ul>
+    </section>
+    <section id="container">
+    <div id="sidebar">
+      <ul>
+        <li><a href="#js-prototypes">JavaScript Prototypes</a></li>
+        <li><a href="#how-do-i-prototype">How do I make a prototype?</a></li>
+        <li><a href="#proto-object">The _proto_ object</a></li>
+        <li><a href="#adding-props">Adding properties to prototype</a></li>
+      </ul>
+    </div>
+      <section id="content">
+      <h1><a name="js-prototypes"></a>JavaScript Prototypes</h1>
+      <p>
+        Source: <a href="http://javascriptissexy.com/javascript-prototype-in-plain-detailed-language/"> Javascriptissexy.com</a><br />
+        1. Every JavaScript function has a prototype property (this property is empty by default), and you attach properties and methods on this prototype property when you want to implement inheritance. This prototype property is not enumerable; that is, it isn’t accessible in a for/in loop. But Firefox and most versions of Safari and Chrome have a __proto__ “pseudo” property (an alternative syntax) that allows you to access an object’s prototype property.<br /><br /> You will likely never use this __proto__ pseudo property, but you should know that it exists and it is simply a way to access an object’s prototype property in some browsers. The prototype property is used primarily for inheritance; you add methods and properties on a function’s prototype property to make those methods and properties available to instances of that function.
+      </p>
+      <p>
+        2. The second concept with prototype in JavaScript is the prototype attribute. Think of the prototype attribute as a characteristic of the object; this characteristic tells us the object’s “parent”. In simple terms: An object’s prototype attribute points to the object’s “parent”—the object it inherited its properties from. The prototype attribute is normally referred to as the prototype object, and it is set automatically when you create a new object. <br /><br />To expound on this: Every object inherits properties from some other object, and it is this other object that is the object’s prototype attribute or “parent.” (You can think of the prototype attribute as the lineage or the parent). In the example code above, newObj‘s prototype is PrintStuff.prototype.<br /><br />
+        Note: All objects have attributes just like object properties have attributes. And the object attributes are prototype, class, and extensible attributes. It is this prototype attribute that we are discussing in this second example.
+      </p>
+      <h1><a name="how-do-i-prototype"> </a>How do I make a prototype?</h1>
+      <p>
+        There are two primary ways. The first is to create an object literal. An object literal will inherit from the "motherclass" Object() and will have whatever properties you assign to it. For example:
+        <br /><br />
+        <code>
+          var newObj = {<br />
+            proerty: attribute, <br />
+            proerty: attribute, <br />
+            proerty: attribute, <br />
+            proerty: attribute <br />
+          } <br /><br />
+        </code>
+        The second way is to create a constructor function, which will be used with the keyword new to create slave objects. For example:<br /><br />
+        <code>
+          function cat(name) {<br />
+            this.name = name;<br />
+            this.talk = function() {<br />
+               alert( this.name + " say meeow!" )<br />
+             }<br />
+            }<br />
+            <br />
+            cat1 = new cat("felix")<br /><br />
+        </code>
+      </p>
+        <h1><a name="proto-object"></a>The _proto_object </h2>
+      <p>
+        To understand prototype chains in JavaScript there is nothing as simple as the __proto__ property. Unfortunately __proto__ is not part of the standard interface of JavaScript, not at least until ES6. So you shouldn’t use it in production code. But anyway it makes explaining prototypes easy.
+      </p><br />
+      <code>
+        // let's create an alien object <br />
+            var alien = {<br />
+             kind: 'alien'<br />
+              }<br />
+          <br />
+        // and a person object<br />
+          var person = {<br />
+          kind: 'person'<br />
+          }<br />
+            <br />
+        // and an object called 'zack'<br />
+        var zack = {};<br />
+
+        // assign alien as the prototype of zack<br />
+        zack.__proto__ = alien<br />
+
+        // zack is now linked to alien<br />
+        // it 'inherits' the properties of alien<br />
+        console.log(zack.kind); //=> ‘alien’<br />
+
+        // assign person as the prototype of zack<br />
+        zack.__proto__ = person<br />
+
+        // and now zack is linked to person<br />
+        console.log(zack.kind); //=> ‘person’<br />
+      </code><br />
+      <p><br />
+        As you can see the __proto__ property is very straightforward to understand and use. Even if we shouldn’t use __proto__ in production code, I think that these examples give the best foundation to understand the JavaScript object model.
+
+        You can check that one object is the prototype of another by doing:
+        <br /> <br />
+
+        <code>
+        console.log(alien.isPrototypeOf(zack))<br />
+        //=> true<br />
+        Prototype lookups are dynamic<br />
+        <br />
+        </code>
+        You can add properties to the prototype of an object at any time, the prototype chain <br />lookup will find the new property as expected.<br /><br />
+        <code>
+        var person = {}<br />
+
+        var zack = {}<br />
+        zack.__proto__ = person<br />
+        <br />
+        // zack doesn't respond to kind at this point<br />
+        console.log(zack.kind); //=> undefined<br />
+        <br />
+        // let's add kind to person<br />
+        person.kind = 'person'<br />
+        <br />
+        // now zack responds to kind<br />
+        // because it finds 'kind' in person<br />
+        console.log(zack.kind); //=> 'person'<br />
+      </code><br />
+        New / updated properties are assigned to the object, not to the prototype<br />
+        <br />
+        What happens if you update a property that already exists in the prototype? Let’s see:<br />
+        <br /><code>
+        var person =  {
+          kind: 'person'<br />
+        }<br />
+
+        var zack = {}<br />
+        zack.__proto__ = person<br />
+
+        zack.kind = 'zack'<br />
+
+        console.log(zack.kind); //=> 'zack'<br />
+        // zack now has a 'kind' property<br />
+        <br />
+        console.log(person.kind); //=> 'person'<br />
+        // person has not being modified<br />
+      </code>
+        Note that the property ‘kind’ now exists in both person and zack.<br />
+      <br />
+    </p>
+     <h1><a name="adding-props">Adding properties to prototype</a></h1>
+       <p>Adding a new property to an existing object is easy:</p><br />
+         <code>
+           myFather.nationality = "English";
+         </code>
+         <br />
+         <br />
+         <br />
+    </section>
+  </section>
+ </body>
+</html>
