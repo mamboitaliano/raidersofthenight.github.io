@@ -59,6 +59,15 @@ img {
 	padding:0.5em;
 }
 
+ul {
+	color: #DBE6FF;
+	font-family: calibri;
+}
+
+a {
+	color:cadetblue;
+}
+
 /*#home {
 	margin-top:1.05em;
 }*/
