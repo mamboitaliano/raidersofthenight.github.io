@@ -7,19 +7,36 @@
 </head>
 
 <body>
-  <h1 id="main_header"><!--Delete this text--->-->Insert title here</h1>
-  <h2 id="second_header"><!--Delete this text--->-->Insert subtitle here</h2>
-  <h4 id="date_header"><!--Delete this text--->-->Insert date here</h4>
+  <h1 id="main_header">SQL Injection :0</h1>
+  <h2 id="second_header">Explanation for newbs</h2>
+  <h4 id="date_header">May 9th, 2015</h4>
 
   <section>
     <p class="bodytext">
-      <!--Delete this text--->-->Write something here
+      If you're heading into the field of application development, web development, and programming, there's a good chance you might have heard the term "SQL injection" by now. Oooooh hacker stuff! So exciting! But what is SQL injection? SQL injection is a technique used by hackers, both whitehat and blackhat, to attack data-driven applications that use any type of SQL database with the goal of stealing data. It occurs by inserting SQL statements into a data field which exploit a security vulnerability in an application's software. One example of this is when user input is either incorrectly filtered for string literal escape characters embedded in SQL statements, or when user input is not strongly typed and unexpectedly executed. 
     </p>
     <p class="bodytext">
-        <!--Delete this text--->-->Write something here too
+      SQL injection (SQLI) is considered one of the top web application vulnerabilities, and is commonly used in coordinated data-heist attacks. There are 5 main types/subclasses of SQL injection. These include:
+    </p>
+    <ul>
+      <li>Classic SQL injection</li>
+      <li>Blind/Inference SQL injection</li>
+      <li><a href="http://en.wikipedia.org/wiki/Database">DBMS</a>-Specific SQL injection</li>
+      <li>Compounded SQL injection
+        <ul>
+          <li><a href="http://www.xiom.com/whid-2007-60">SQL injection + insufficient authentication</a></li>
+          <li><a href="http://www.xiom.com/content/whid-2009-1-gaza-conflict-cyber-war">SQL injection + DDoS attacks</a></li>
+          <li><a href="http://www.xiom.com/taxonomy/term/181">SQL injection + DNS hijacking</a></li>
+          <li><a href="http://www.darkreading.com/third-wave-of-web-attacks-not-the-last/d/d-id/1129488?">SQL injection + XSS</a></li>
+        </ul>
+      </li>
+    </ul>
+
+    <p class="bodytext">
+       The most common method of SQL injection is by exploiting data fields where user input is not properly filtered for <a href="http://en.wikipedia.org/wiki/Escape_character">escape characters</a>, thus allowing SQL statements to be passed. In essence, this allows a user or hacker to access the database through data input fields, potentially allowing this person to copy or wipe the database, or worse, do both. 
     </p>
     <p class="bodytext">
-       <!--Delete this text--->-->Lastly, write something here
+       Luckily, SQL injection can be avoided. Application developers can use a form of input validation to check the user(or hacker)'s input against a set of pre-defined rules for the type of input. Such rules could include constraints on length, or enforcing strong type user input and syntax. In a nutshell, the more "picky" your user input fields are about the type and length of user input allowable, the safer. The sacrifice, however, is flexibility. Another smart thing to do is to ensure that any user input data is not sent to the SQL interpreter as an SQL query. Failing to safeguard against this could allow a hacker to send SQL commands directly through data fields. To prevent this, application devs can use input validation. Lastly, setting user permission limitations to stringent might also prove to be a smart move. 
     </p>
 
       <!-- copy and paste as many sections as you want to add paragraphs -->
@@ -67,6 +84,9 @@
     </div>
     <div class="link_container">
       <a href="https://raidersofthenight.github.io/blog/c8-conflict.html">Conflict</a>
+    </div>
+    <div class="link_container">
+      <a href="https://raidersofthenight.github.io/cheat-sheet.html">DBC Cheat Sheet</a>
     </div>
   </div>
 </body>
